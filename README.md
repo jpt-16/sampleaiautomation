@@ -26,7 +26,9 @@ Copy `.env.example` to `.env.local`.
 
 | Variable | Required | Purpose |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | no | Enables live AI replies. Without it, demo mode. Server-only. |
+| `GEMINI_API_KEY` | no | Live replies via Gemini Flash (takes priority). Server-only. Get one at aistudio.google.com/apikey. |
+| `GEMINI_MODEL` | no | Default `gemini-2.5-flash`. |
+| `ANTHROPIC_API_KEY` | no | Live replies via Claude if no Gemini key. With neither key: demo mode. |
 | `ANTHROPIC_MODEL` | no | Model override (default `claude-haiku-5-5`). |
 | `SUPABASE_URL` | no | Use Supabase for storage (set with the key below). |
 | `SUPABASE_SERVICE_ROLE_KEY` | no | Server-only key. Never prefix with `NEXT_PUBLIC_`. |

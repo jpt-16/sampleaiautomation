@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
-import { aiConfigured } from "@/lib/ai";
+import { activeProvider, aiConfigured } from "@/lib/ai";
 import { BUSINESS_NAME } from "@/lib/config";
 import "./globals.css";
 
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <div className="wrap">
-          <Header demoMode={!aiConfigured()} />
+          <Header demoMode={!aiConfigured()} provider={activeProvider()} />
           {children}
         </div>
       </body>
